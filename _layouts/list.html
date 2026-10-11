@@ -6,6 +6,9 @@ layout: default
   <p>对参考游戏的系统设计与循环结构的拆解笔记——为什么要这样设计、解决了什么问题、哪些可以借鉴。</p>
 </section>
 
+{% if posts.size == 0 %}
+<p class="empty-hint">还没有文章——复制 <code>_posts/_TEMPLATE.md</code> 开始写第一篇。</p>
+{% endif %}
 <section class="post-list">
   {% assign posts = site.posts | sort: date | reverse %}
   {% for post in posts %}

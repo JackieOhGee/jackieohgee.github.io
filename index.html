@@ -1,22 +1,23 @@
 ---
 layout: default
 ---
-<!-- ============ Hero ============ -->
+<!-- ============ Hero（填：你是谁、一句话定位） ============ -->
 <section class="hero">
-  <h1>你好，我是 <em>JackieOhGee</em>。<br>我在做一款太空科幻搜打撤游戏。</h1>
-  <p>独立开发者。正在用 Unity 6 + QFramework 开发俯视角搜打撤《星际回收工》——
-  从系统策划、架构搭建到内容制作全流程单人推进。这里是我的开发记录与设计拆解。</p>
+  <h1>（一句话介绍你自己，例如：你好，我是<em>某某</em>，我在做什么）</h1>
+  <p>（两三句话的补充说明：方向、经历、这个网站放什么。填完删掉本行括号提示。）</p>
   <div class="hero-tags">
-    <span>Unity 6</span><span>QFramework</span><span>系统设计</span>
-    <span>搜打撤（Extraction）</span><span>单人开发</span>
+    <span>标签一</span><span>标签二</span><span>标签三</span>
   </div>
 </section>
 
-<!-- ============ 最新拆解案 ============ -->
+<!-- ============ 拆解案（最新 3 篇自动显示；加文章见 _posts/_TEMPLATE.md） ============ -->
 <section class="section" id="articles">
-  <h2 class="section-title">拆解案 <small>对参考游戏的系统拆解笔记</small></h2>
+  <h2 class="section-title">拆解案 <small>自动列出最新 3 篇</small></h2>
+  {% assign posts = site.posts | sort: date | reverse %}
+  {% if posts.size == 0 %}
+  <p class="empty-hint">还没有文章——把 <code>_posts/_TEMPLATE.md</code> 复制一份、去掉文件名下划线开始写，推送后这里自动出现。</p>
+  {% endif %}
   <div class="post-list">
-    {% assign posts = site.posts | sort: date | reverse %}
     {% for post in posts limit: 3 %}
     <a class="post-card" href="{{ post.url | relative_url }}">
       <div class="post-card-meta">
@@ -29,34 +30,30 @@ layout: default
     </a>
     {% endfor %}
   </div>
-  <p style="margin-top:18px"><a href="{{ '/articles/' | relative_url }}">查看全部拆解案 →</a></p>
+  {% if posts.size > 0 %}<p style="margin-top:18px"><a href="{{ '/articles/' | relative_url }}">查看全部拆解案 →</a></p>{% endif %}
 </section>
 
-<!-- ============ 游戏作品 ============ -->
+<!-- ============ 游戏作品（填：项目信息；不需要可整段删除） ============ -->
 <section class="section" id="projects">
-  <h2 class="section-title">游戏作品 <small>开发中</small></h2>
+  <h2 class="section-title">游戏作品</h2>
 
   <div class="project-card">
-    <div class="project-cover">星际回收工</div>
+    <div class="project-cover">项目封面</div>
     <div class="project-body">
-      <h3>星际回收工</h3>
-      <div class="project-en">SCAVENGER OF THE STARS · in development</div>
-      <p>俯视角 3D 太空科幻搜打撤（参考《地狱潜兵2》的战场支援循环）：出发港口经营——
-      商店 / 制作改装 / 飞船支援 / 设施升级；局内搜刮、战斗、任务与随机撤离。
-      QFramework 架构驱动，场景生成与自动化冒烟测试管线（119 项断言）保障单人开发效率。</p>
+      <h3>（项目名）</h3>
+      <div class="project-en">PROJECT NAME · 状态（开发中/已发布）</div>
+      <p>（项目介绍：类型、玩法核心、你的职责、技术要点。三四行以内。）</p>
       <div class="project-tags">
-        <span>Unity 6 · URP</span><span>QFramework 全家桶</span><span>俯视角 3D</span>
-        <span>Kenney 美术中期方案</span><span>自动化构建管线</span>
+        <span>技术栈标签</span><span>玩法标签</span><span>其他标签</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ 关于 ============ -->
+<!-- ============ 关于（填：自我介绍与链接） ============ -->
 <section class="about" id="about">
   <h2 class="section-title">关于</h2>
-  <p>系统策划出身的独立游戏开发者。相信"取舍感 &gt; 成长兑现 &gt; 可读可控"的设计排序，
-  习惯先写策划案再动代码，用自动化测试守住单人开发的质量底线。</p>
+  <p>（自我介绍：背景、擅长的事、在找什么机会。）</p>
   <div class="about-links">
     <a href="https://github.com/JackieOhGee" target="_blank">GitHub</a>
     <a href="{{ '/articles/' | relative_url }}">全部拆解案</a>

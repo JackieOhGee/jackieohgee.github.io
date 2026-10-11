@@ -195,3 +195,11 @@ a:hover { color: var(--accent); }
   .project-card { grid-template-columns: 1fr; }
   .post-title { font-size: 24px; }
 }
+
+/* ---------- 空状态提示 ---------- */
+.empty-hint {
+  color: var(--text-dim); font-size: 14.5px;
+  border: 1px dashed var(--line); border-radius: var(--radius);
+  padding: 22px 24px; margin-bottom: 20px;
+}
+.empty-hint code { font-family: var(--mono); color: var(--cyan); }
