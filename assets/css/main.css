@@ -189,7 +189,8 @@ a:hover { color: var(--accent); }
 
 /* ---------- 响应式 ---------- */
 @media (max-width: 720px) {
-  .site-nav a { margin-left: 14px; font-size: 13.5px; }
+  .site-nav a { margin-left: 10px; font-size: 13px; }
+  .site-nav a:first-child { display: none; } /* 手机隐藏"首页"（点站名即回首页） */
   .hero { padding: 48px 0 36px; }
   .hero h1 { font-size: 26px; }
   .project-card { grid-template-columns: 1fr; }
