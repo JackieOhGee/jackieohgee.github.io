@@ -1,0 +1,64 @@
+---
+layout: default
+---
+<!-- ============ Hero ============ -->
+<section class="hero">
+  <h1>你好，我是 <em>JackieOhGee</em>。<br>我在做一款太空科幻搜打撤游戏。</h1>
+  <p>独立开发者。正在用 Unity 6 + QFramework 开发俯视角搜打撤《星际回收工》——
+  从系统策划、架构搭建到内容制作全流程单人推进。这里是我的开发记录与设计拆解。</p>
+  <div class="hero-tags">
+    <span>Unity 6</span><span>QFramework</span><span>系统设计</span>
+    <span>搜打撤（Extraction）</span><span>单人开发</span>
+  </div>
+</section>
+
+<!-- ============ 最新拆解案 ============ -->
+<section class="section" id="articles">
+  <h2 class="section-title">拆解案 <small>对参考游戏的系统拆解笔记</small></h2>
+  <div class="post-list">
+    {% assign posts = site.posts | sort: date | reverse %}
+    {% for post in posts limit: 3 %}
+    <a class="post-card" href="{{ post.url | relative_url }}">
+      <div class="post-card-meta">
+        {% if post.category %}<span class="post-category">{{ post.category }}</span>{% endif %}
+        <time>{{ post.date | date: '%Y-%m-%d' }}</time>
+      </div>
+      <h2 class="post-card-title">{{ post.title }}</h2>
+      {% if post.subtitle %}<p class="post-card-sub">{{ post.subtitle }}</p>{% endif %}
+      <p class="post-card-excerpt">{{ post.excerpt | strip_html | truncate: 80 }}</p>
+    </a>
+    {% endfor %}
+  </div>
+  <p style="margin-top:18px"><a href="{{ '/articles/' | relative_url }}">查看全部拆解案 →</a></p>
+</section>
+
+<!-- ============ 游戏作品 ============ -->
+<section class="section" id="projects">
+  <h2 class="section-title">游戏作品 <small>开发中</small></h2>
+
+  <div class="project-card">
+    <div class="project-cover">星际回收工</div>
+    <div class="project-body">
+      <h3>星际回收工</h3>
+      <div class="project-en">SCAVENGER OF THE STARS · in development</div>
+      <p>俯视角 3D 太空科幻搜打撤（参考《地狱潜兵2》的战场支援循环）：出发港口经营——
+      商店 / 制作改装 / 飞船支援 / 设施升级；局内搜刮、战斗、任务与随机撤离。
+      QFramework 架构驱动，场景生成与自动化冒烟测试管线（119 项断言）保障单人开发效率。</p>
+      <div class="project-tags">
+        <span>Unity 6 · URP</span><span>QFramework 全家桶</span><span>俯视角 3D</span>
+        <span>Kenney 美术中期方案</span><span>自动化构建管线</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 关于 ============ -->
+<section class="about" id="about">
+  <h2 class="section-title">关于</h2>
+  <p>系统策划出身的独立游戏开发者。相信"取舍感 &gt; 成长兑现 &gt; 可读可控"的设计排序，
+  习惯先写策划案再动代码，用自动化测试守住单人开发的质量底线。</p>
+  <div class="about-links">
+    <a href="https://github.com/JackieOhGee" target="_blank">GitHub</a>
+    <a href="{{ '/articles/' | relative_url }}">全部拆解案</a>
+  </div>
+</section>
