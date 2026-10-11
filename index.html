@@ -1,61 +1,58 @@
 ---
 layout: default
 ---
-<!-- ============ Hero（填：你是谁、一句话定位） ============ -->
+<!-- ============ Hero（英文大标题 + 中文副题 + 定位行 + 说明） ============ -->
 <section class="hero">
-  <h1>（一句话介绍你自己，例如：你好，我是<em>某某</em>，我在做什么）</h1>
-  <p>（两三句话的补充说明：方向、经历、这个网站放什么。填完删掉本行括号提示。）</p>
-  <div class="hero-tags">
-    <span>标签一</span><span>标签二</span><span>标签三</span>
-  </div>
+  <p class="hero-kicker">PORTFOLIO</p>
+  <h1 class="hero-title-en">GAME DESIGN<br>PORTFOLIO</h1>
+  <p class="hero-title-zh">（中文主标题，例如：游戏系统策划作品集）</p>
+  <p class="hero-position">（定位一 · 定位二 · 定位三）</p>
+  <p class="hero-desc">（一两句说明：这个网站放什么、你是谁。填完删掉括号提示。）</p>
 </section>
 
-<!-- ============ 拆解案（最新 3 篇自动显示；加文章见 _posts/_TEMPLATE.md） ============ -->
-<section class="section" id="articles">
-  <h2 class="section-title">拆解案 <small>自动列出最新 3 篇</small></h2>
-  {% assign posts = site.posts | sort: date | reverse %}
-  {% if posts.size == 0 %}
-  <p class="empty-hint">还没有文章——把 <code>_posts/_TEMPLATE.md</code> 复制一份、去掉文件名下划线开始写，推送后这里自动出现。</p>
-  {% endif %}
+<!-- ============ 作品集（拆解案 + 项目统一网格，自动 + 手动混合） ============ -->
+<section class="section" id="works">
+  <h2 class="section-title">作品集 <small>拆解案与项目</small></h2>
   <div class="post-list">
-    {% for post in posts limit: 3 %}
-    <a class="post-card" href="{{ post.url | relative_url }}">
-      <div class="post-card-meta">
-        {% if post.category %}<span class="post-category">{{ post.category }}</span>{% endif %}
-        <time>{{ post.date | date: '%Y-%m-%d' }}</time>
+
+    {% assign posts = site.posts | sort: date | reverse %}
+    {% for post in posts %}
+    <a class="work-card" href="{{ post.url | relative_url }}">
+      <div class="work-icon">{{ post.icon | default: '📄' }}</div>
+      <div class="work-en">{{ post.tagline | default: 'ARTICLE' }}</div>
+      <h2 class="work-title">{{ post.title }}</h2>
+      <p class="work-desc">{{ post.excerpt | strip_html | truncate: 72 }}</p>
+      <div class="work-tags">
+        {% if post.category %}<span>{{ post.category }}</span>{% endif %}
+        {% if post.tags %}{% for t in post.tags %}<span>{{ t }}</span>{% endfor %}{% endif %}
       </div>
-      <h2 class="post-card-title">{{ post.title }}</h2>
-      {% if post.subtitle %}<p class="post-card-sub">{{ post.subtitle }}</p>{% endif %}
-      <p class="post-card-excerpt">{{ post.excerpt | strip_html | truncate: 80 }}</p>
+      <span class="work-link">查看详情 →</span>
     </a>
     {% endfor %}
+
+    <!-- 手动项目卡（照此格式加你的游戏项目；不需要可整块删除） -->
+    <a class="work-card" href="#works">
+      <div class="work-icon">🛠️</div>
+      <div class="work-en">SELF-DEV PROJECT</div>
+      <h2 class="work-title">（项目名）</h2>
+      <p class="work-desc">（一句话项目描述：类型、玩法核心、你的职责。）</p>
+      <div class="work-tags"><span>开发中</span><span>（技术栈）</span><span>（玩法标签）</span></div>
+      <span class="work-link">查看详情 →</span>
+    </a>
+
   </div>
-  {% if posts.size > 0 %}<p style="margin-top:18px"><a href="{{ '/articles/' | relative_url }}">查看全部拆解案 →</a></p>{% endif %}
+  {% assign posts = site.posts | sort: date | reverse %}
+  {% if posts.size == 0 %}
+  <p class="empty-hint">还没有文章——复制 <code>_posts/_TEMPLATE.md</code> 写第一篇，卡片会自动出现在这里。</p>
+  {% endif %}
 </section>
 
-<!-- ============ 游戏作品（填：项目信息；不需要可整段删除） ============ -->
-<section class="section" id="projects">
-  <h2 class="section-title">游戏作品</h2>
-
-  <div class="project-card">
-    <div class="project-cover">项目封面</div>
-    <div class="project-body">
-      <h3>（项目名）</h3>
-      <div class="project-en">PROJECT NAME · 状态（开发中/已发布）</div>
-      <p>（项目介绍：类型、玩法核心、你的职责、技术要点。三四行以内。）</p>
-      <div class="project-tags">
-        <span>技术栈标签</span><span>玩法标签</span><span>其他标签</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 关于（填：自我介绍与链接） ============ -->
+<!-- ============ 关于 ============ -->
 <section class="about" id="about">
   <h2 class="section-title">关于</h2>
   <p>（自我介绍：背景、擅长的事、在找什么机会。）</p>
   <div class="about-links">
     <a href="https://github.com/JackieOhGee" target="_blank">GitHub</a>
-    <a href="{{ '/articles/' | relative_url }}">全部拆解案</a>
+    <a href="{{ '/articles/' | relative_url }}">全部文章</a>
   </div>
 </section>

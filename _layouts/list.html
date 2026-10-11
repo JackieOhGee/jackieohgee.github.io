@@ -12,14 +12,16 @@ layout: default
 <section class="post-list">
   {% assign posts = site.posts | sort: date | reverse %}
   {% for post in posts %}
-  <a class="post-card" href="{{ post.url | relative_url }}">
-    <div class="post-card-meta">
-      {% if post.category %}<span class="post-category">{{ post.category }}</span>{% endif %}
-      <time>{{ post.date | date: '%Y-%m-%d' }}</time>
+  <a class="work-card" href="{{ post.url | relative_url }}">
+    <div class="work-icon">{{ post.icon | default: '📄' }}</div>
+    <div class="work-en">{{ post.tagline | default: 'ARTICLE' }}</div>
+    <h2 class="work-title">{{ post.title }}</h2>
+    <p class="work-desc">{{ post.excerpt | strip_html | truncate: 80 }}</p>
+    <div class="work-tags">
+      {% if post.category %}<span>{{ post.category }}</span>{% endif %}
+      {% if post.tags %}{% for t in post.tags %}<span>{{ t }}</span>{% endfor %}{% endif %}
     </div>
-    <h2 class="post-card-title">{{ post.title }}</h2>
-    {% if post.subtitle %}<p class="post-card-sub">{{ post.subtitle }}</p>{% endif %}
-    <p class="post-card-excerpt">{{ post.excerpt | strip_html | truncate: 96 }}</p>
+    <span class="work-link">查看详情 →</span>
   </a>
   {% endfor %}
 </section>

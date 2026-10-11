@@ -1,3 +1,15 @@
+---
+layout: post
+title: 《问剑长生》初步体验与分析
+subtitle: 修仙放置挂机 · 系统全拆解（人界篇）
+category: 拆解案
+tags: [修仙放置, 系统拆解, 商业化分析]
+icon: 🔍
+tagline: TEARDOWN ANALYSIS
+date: 2026-10-06
+excerpt: 两个月实际游玩后的系统级拆解：修为/功法/装备/灵宠四大养成线、宗门社交与商业化的完整分析，附人界篇全系统思维导图。
+---
+
 <div class="mindmap-card">
   <div class="mindmap-title">思维导图 · 人界篇系统全览（横向滚动查看，鼠标悬停节点看完整标题）</div>
   <div class="mindmap-scroll"><img src="../../assets/img/wjcs/mindmap.svg" alt="问剑长生（人界篇）系统拆解思维导图"></div>
