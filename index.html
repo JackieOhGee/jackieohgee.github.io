@@ -12,7 +12,7 @@ layout: default
 
   {% assign posts = site.posts | sort: date | reverse %}
   {% for post in posts %}
-  <a class="project-card" href="{{ post.url | relative_url }}">
+  <a class="project-card" href="{{ post.url }}">
     <div class="card-icon" style="background: rgba(34, 211, 238, 0.12);">{{ post.icon | default: '📄' }}</div>
     <div class="card-type">{{ post.tagline | default: 'TEARDOWN ANALYSIS' }}</div>
     <h3>{{ post.title }}</h3>
