@@ -1,6 +1,10 @@
 ---
 layout: default
 ---
+<div class="back-bar">
+  <a href="{{ '/' | relative_url }}">返回作品集</a>
+</div>
+
 <article class="post">
   <header class="post-header">
     <div class="post-meta">
@@ -14,8 +18,4 @@ layout: default
   <div class="post-content">
     {{ content }}
   </div>
-
-  <footer class="post-footer">
-    <a class="back-link" href="{{ '/articles/' | relative_url }}">← 返回拆解案列表</a>
-  </footer>
 </article>

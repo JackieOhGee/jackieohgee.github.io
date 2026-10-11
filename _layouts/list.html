@@ -3,25 +3,26 @@ layout: default
 ---
 <section class="page-head">
   <h1>拆解案</h1>
-  <p>对参考游戏的系统设计与循环结构的拆解笔记——为什么要这样设计、解决了什么问题、哪些可以借鉴。</p>
+  <p>对参考游戏的系统设计与循环结构的拆解笔记</p>
 </section>
 
+{% assign posts = site.posts | sort: date | reverse %}
 {% if posts.size == 0 %}
 <p class="empty-hint">还没有文章——复制 <code>_posts/_TEMPLATE.md</code> 开始写第一篇。</p>
 {% endif %}
-<section class="post-list">
-  {% assign posts = site.posts | sort: date | reverse %}
+
+<section class="projects">
   {% for post in posts %}
-  <a class="work-card" href="{{ post.url | relative_url }}">
-    <div class="work-icon">{{ post.icon | default: '📄' }}</div>
-    <div class="work-en">{{ post.tagline | default: 'ARTICLE' }}</div>
-    <h2 class="work-title">{{ post.title }}</h2>
-    <p class="work-desc">{{ post.excerpt | strip_html | truncate: 80 }}</p>
-    <div class="work-tags">
-      {% if post.category %}<span>{{ post.category }}</span>{% endif %}
-      {% if post.tags %}{% for t in post.tags %}<span>{{ t }}</span>{% endfor %}{% endif %}
+  <a class="project-card" href="{{ post.url | relative_url }}">
+    <div class="card-icon" style="background: rgba(34, 211, 238, 0.12);">{{ post.icon | default: '📄' }}</div>
+    <div class="card-type">{{ post.tagline | default: 'TEARDOWN ANALYSIS' }}</div>
+    <h3>{{ post.title }}</h3>
+    <p>{{ post.excerpt | strip_html | truncate: 60 }}</p>
+    <div class="card-tags">
+      {% if post.category %}<span class="tag">{{ post.category }}</span>{% endif %}
+      {% if post.tags %}{% for t in post.tags %}<span class="tag">{{ t }}</span>{% endfor %}{% endif %}
     </div>
-    <span class="work-link">查看详情 →</span>
+    <span class="card-link">查看详情</span>
   </a>
   {% endfor %}
 </section>

@@ -3,33 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{% if page.title %}{{ page.title }} · {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
-  <meta name="description" content="{{ page.excerpt | default: site.description | strip_newlines | truncate: 140 }}">
+  <title>{% if page.title %}{{ page.title }} — Game Design Portfolio{% else %}游戏系统策划作品集 — Game Design Portfolio{% endif %}</title>
+  <meta name="description" content="{{ page.excerpt | default: '游戏系统策划作品集：系统设计 · 竞品拆解 · 玩法分析' | strip_newlines | truncate: 140 }}">
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
 </head>
 <body>
-  <header class="site-header">
-    <div class="wrap">
-      <a class="site-title" href="{{ '/' | relative_url }}">
-        <span class="site-title-mark">◆</span>{{ site.title | split: '·' | first }}
-      </a>
-      <nav class="site-nav">
-        <a href="{{ '/' | relative_url }}">首页</a>
-        <a href="{{ '/articles/' | relative_url }}">拆解案</a>
-        <a href="{{ '/#projects' | relative_url }}">游戏作品</a>
-        <a href="{{ '/#about' | relative_url }}">关于</a>
-      </nav>
-    </div>
-  </header>
-
-  <main class="wrap">
-    {{ content }}
-  </main>
-
-  <footer class="site-footer">
-    <div class="wrap">
-      <span>© {{ site.time | date: '%Y' }} JackieOhGee · 用 Markdown 写作，GitHub Pages 自动发布</span>
-    </div>
-  </footer>
+  {{ content }}
 </body>
 </html>

@@ -1,58 +1,44 @@
 ---
 layout: default
 ---
-<!-- ============ Hero（英文大标题 + 中文副题 + 定位行 + 说明） ============ -->
-<section class="hero">
-  <p class="hero-kicker">PORTFOLIO</p>
-  <h1 class="hero-title-en">GAME DESIGN<br>PORTFOLIO</h1>
-  <p class="hero-title-zh">（中文主标题，例如：游戏系统策划作品集）</p>
-  <p class="hero-position">（定位一 · 定位二 · 定位三）</p>
-  <p class="hero-desc">（一两句说明：这个网站放什么、你是谁。填完删掉括号提示。）</p>
-</section>
+<div class="hero">
+  <span class="badge">GAME SYSTEM DESIGN PORTFOLIO</span>
+  <h1>（中文主标题，例如：游戏系统策划作品集）</h1>
+  <p class="subtitle">（定位一 · 定位二 · 定位三）</p>
+  <p class="desc">（一两句说明：这个网站放什么。填完删掉括号提示。）</p>
+</div>
 
-<!-- ============ 作品集（拆解案 + 项目统一网格，自动 + 手动混合） ============ -->
-<section class="section" id="works">
-  <h2 class="section-title">作品集 <small>拆解案与项目</small></h2>
-  <div class="post-list">
+<div class="projects">
 
-    {% assign posts = site.posts | sort: date | reverse %}
-    {% for post in posts %}
-    <a class="work-card" href="{{ post.url | relative_url }}">
-      <div class="work-icon">{{ post.icon | default: '📄' }}</div>
-      <div class="work-en">{{ post.tagline | default: 'ARTICLE' }}</div>
-      <h2 class="work-title">{{ post.title }}</h2>
-      <p class="work-desc">{{ post.excerpt | strip_html | truncate: 72 }}</p>
-      <div class="work-tags">
-        {% if post.category %}<span>{{ post.category }}</span>{% endif %}
-        {% if post.tags %}{% for t in post.tags %}<span>{{ t }}</span>{% endfor %}{% endif %}
-      </div>
-      <span class="work-link">查看详情 →</span>
-    </a>
-    {% endfor %}
-
-    <!-- 手动项目卡（照此格式加你的游戏项目；不需要可整块删除） -->
-    <a class="work-card" href="#works">
-      <div class="work-icon">🛠️</div>
-      <div class="work-en">SELF-DEV PROJECT</div>
-      <h2 class="work-title">（项目名）</h2>
-      <p class="work-desc">（一句话项目描述：类型、玩法核心、你的职责。）</p>
-      <div class="work-tags"><span>开发中</span><span>（技术栈）</span><span>（玩法标签）</span></div>
-      <span class="work-link">查看详情 →</span>
-    </a>
-
-  </div>
   {% assign posts = site.posts | sort: date | reverse %}
-  {% if posts.size == 0 %}
-  <p class="empty-hint">还没有文章——复制 <code>_posts/_TEMPLATE.md</code> 写第一篇，卡片会自动出现在这里。</p>
-  {% endif %}
-</section>
+  {% for post in posts %}
+  <a class="project-card" href="{{ post.url | relative_url }}">
+    <div class="card-icon" style="background: rgba(34, 211, 238, 0.12);">{{ post.icon | default: '📄' }}</div>
+    <div class="card-type">{{ post.tagline | default: 'TEARDOWN ANALYSIS' }}</div>
+    <h3>{{ post.title }}</h3>
+    <p>{{ post.excerpt | strip_html | truncate: 60 }}</p>
+    <div class="card-tags">
+      {% if post.category %}<span class="tag">{{ post.category }}</span>{% endif %}
+      {% if post.tags %}{% for t in post.tags %}<span class="tag">{{ t }}</span>{% endfor %}{% endif %}
+    </div>
+    <span class="card-link">查看详情</span>
+  </a>
+  {% endfor %}
 
-<!-- ============ 关于 ============ -->
-<section class="about" id="about">
-  <h2 class="section-title">关于</h2>
-  <p>（自我介绍：背景、擅长的事、在找什么机会。）</p>
-  <div class="about-links">
-    <a href="https://github.com/JackieOhGee" target="_blank">GitHub</a>
-    <a href="{{ '/articles/' | relative_url }}">全部文章</a>
-  </div>
-</section>
+  <!-- 手动项目卡（照此格式加你的游戏项目；不需要可整块删除） -->
+  <a class="project-card" href="https://github.com/JackieOhGee" target="_blank">
+    <div class="card-icon" style="background: rgba(245, 158, 11, 0.12);">🛠️</div>
+    <div class="card-type">SELF-DEV PROJECT</div>
+    <h3>（项目名）</h3>
+    <p>（一句话项目描述：类型、玩法核心、你的职责。）</p>
+    <div class="card-tags">
+      <span class="tag">开发中</span><span class="tag">（技术栈）</span><span class="tag">（玩法标签）</span>
+    </div>
+    <span class="card-link">查看详情</span>
+  </a>
+
+</div>
+
+<div class="footer">
+  <p>© Game Design Portfolio · Powered by GitHub Pages</p>
+</div>
