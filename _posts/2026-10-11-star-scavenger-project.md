@@ -7,11 +7,11 @@ tags: [Unity 6, QFramework, 搜打撤, 单人开发]
 icon: 🛠️
 tagline: SELF-DEV PROJECT
 date: 2026-10-11
-excerpt: 个人开发的俯视角搜打撤游戏：完整可玩循环（港口经营→进图搜打撤→结算），QFramework 架构 + 自动化测试管线，附演示视频与系统模块设计图。
+excerpt: 个人开发的俯视角搜打撤游戏：核心循环完整可玩，QFramework 架构 + 119 项自动化测试。本页为系统策划案节选——场景模块、商店改装、物品视野、移动负重、枪械防具、装备 UI 六大模块的设计图与解读，附实机演示视频。
 ---
 
 <div class="pdf-strip">
-  <span>下方为实机演示视频（含旁白），模块设计图见各节。</span>
+  <span>下方为实机演示视频（含旁白讲解），系统设计图见各节。</span>
   <a href="/assets/vid/demo.mp4" target="_blank">新标签页打开视频 ↗</a>
 </div>
 
@@ -25,11 +25,12 @@ excerpt: 个人开发的俯视角搜打撤游戏：完整可玩循环（港口�
   <ul class="toc-list">
     <li><a href="#sec1"><span class="toc-num">01</span>项目概览</a></li>
     <li><a href="#sec2"><span class="toc-num">02</span>实机演示</a></li>
-    <li><a href="#sec3"><span class="toc-num">03</span>场景与部门模块</a></li>
-    <li><a href="#sec4"><span class="toc-num">04</span>商店与制作改装</a></li>
-    <li><a href="#sec5"><span class="toc-num">05</span>核心机制设计</a></li>
-    <li><a href="#sec6"><span class="toc-num">06</span>物品与装备体系</a></li>
-    <li><a href="#sec7"><span class="toc-num">07</span>装备 UI 与工程化</a></li>
+    <li><a href="#sec3"><span class="toc-num">03</span>场景模块规划</a></li>
+    <li><a href="#sec4"><span class="toc-num">04</span>商店 / 制作 / 改装</a></li>
+    <li><a href="#sec5"><span class="toc-num">05</span>物品存储与视野机制</a></li>
+    <li><a href="#sec6"><span class="toc-num">06</span>移动 / 负重 / 噪音</a></li>
+    <li><a href="#sec7"><span class="toc-num">07</span>枪械防具数值设计</a></li>
+    <li><a href="#sec8"><span class="toc-num">08</span>装备 UI 与工程化</a></li>
   </ul>
   <a class="back-btn" href="/">← 返回作品集</a>
 </aside>
@@ -52,32 +53,36 @@ excerpt: 个人开发的俯视角搜打撤游戏：完整可玩循环（港口�
   <div class="sec-num">01</div>
   <h2 class="sec-title">项目概览</h2>
 
-  <p>一款俯视角 3D 搜打撤游戏，参考《地狱潜兵 2》的战场支援循环：
-  玩家从港口出发进入危险区，搜刮物资、对抗敌人、前往撤离点结算；
-  带回的物资在港口出售，用于商店购买、武器改装与设施升级，再进入下一局。</p>
+  <p>一款俯视角 3D 搜打撤游戏，参考《地狱潜兵 2》的战场支援循环。玩家从空间站港口出发进入危险区，
+  搜刮物资、对抗敌人、前往撤离点结算；带回的物资出售换取货币，投入装备养成与公司派系升级，再进入下一局。</p>
 
   <div class="card-grid">
     <div class="info-card">
       <div class="card-icon">🏗️</div>
       <h4>架构</h4>
-      <p>QFramework：UIKit 管全部界面、TableKit 驱动物品配置表、命令层处理玩家操作，
-      Model 层持有存档数据——界面/数据/逻辑三层分离。</p>
+      <p>QFramework：UIKit 管全部界面、配置表驱动物品/敌人/任务数据、命令层处理玩家操作、Model 层持有存档——界面与逻辑分离，改数据不动代码。</p>
     </div>
     <div class="info-card">
       <div class="card-icon">🎬</div>
       <h4>场景管线</h4>
-      <p>关卡由编辑器脚本一键生成，生成后可在编辑器手调，摆位可导出存档并在重建后自动恢复。</p>
+      <p>关卡由编辑器脚本一键生成，生成后可在编辑器手调；摆位可导出为存档，重建场景后自动恢复，手调不丢失。</p>
     </div>
     <div class="info-card">
       <div class="card-icon">🧪</div>
       <h4>自动化测试</h4>
-      <p>119 项断言的命令行冒烟测试，每次改动后全量回归——单人开发的质量底线。</p>
+      <p>119 项断言的命令行冒烟测试，每次改动全量回归——单人开发的质量底线。</p>
     </div>
     <div class="info-card">
       <div class="card-icon">🎨</div>
       <h4>美术现状</h4>
-      <p>Kenney 免费素材 + 灰色占位，专注功能与玩法验证；表现层为后续替换预留了统一入口。</p>
+      <p>Kenney 免费素材 + 灰色占位，专注玩法验证；表现层留了统一替换入口。</p>
     </div>
+  </div>
+
+  <div class="callout analysis">
+    <div class="callout-title">🎯 设计三支柱</div>
+    <p>取舍感 &gt; 成长兑现 &gt; 可读可控——搜打撤的乐趣核心在于"带什么进去、放弃什么、能不能活着带出来"，
+    所有系统设计都优先服务这三条排序。</p>
   </div>
 </div>
 
@@ -86,10 +91,10 @@ excerpt: 个人开发的俯视角搜打撤游戏：完整可玩循环（港口�
   <h2 class="sec-title">实机演示</h2>
 
   <p>演示流程：港口仓库 → 商店与改装台 → 进入危险区搜刮 → 遭遇敌人（AI 士气表现）→
-  手雷投掷 → 撤离结算，旁白同步讲解各系统实现。</p>
+  手雷投掷与闪避 AI → 撤离结算，旁白同步讲解各系统实现。</p>
 
   <div class="video-card">
-    <video controls preload="metadata" poster="">
+    <video controls preload="metadata">
       <source src="/assets/vid/demo.mp4" type="video/mp4">
       您的浏览器不支持视频播放，<a href="/assets/vid/demo.mp4" target="_blank">点此下载观看</a>。
     </video>
@@ -98,59 +103,181 @@ excerpt: 个人开发的俯视角搜打撤游戏：完整可玩循环（港口�
 
 <div class="section" id="sec3">
   <div class="sec-num">03</div>
-  <h2 class="sec-title">场景与部门模块</h2>
+  <h2 class="sec-title">场景模块规划</h2>
 
-  <p>主场景的模块划分：出发港口（仓库/商店/改装/飞船/管理终端）与危险区的空间关系、
-  玩家动线和交互点位。</p>
-  <img src="/assets/img/project/main-scene-modules.png" alt="主场景模块设定">
+  <p>主场景为空间站港口，五大功能模块围绕它展开，各自承担经营循环的一个环节：</p>
 
-  <p>港口功能以"公司部门"形式组织：每个部门对应一个终端面板与一条养成线，
-  部门等级解锁对应功能——用统一的框架承载所有经营入口。</p>
-  <img src="/assets/img/project/company-departments.png" alt="公司部门模块设定">
+  <div class="card-grid">
+    <div class="info-card">
+      <div class="card-icon">📦</div>
+      <h4>仓库</h4>
+      <p>存储和出售玩家账号名下的各类资产：局内收集物、局外购买物、装备配件与消耗品。
+      页面左侧展示角色当前装备，右侧为库存页面。</p>
+    </div>
+    <div class="info-card">
+      <div class="card-icon">🏪</div>
+      <h4>交易站</h4>
+      <p>为玩家提供购买物资的功能模块——用局内赚的货币补充弹药、医疗和消耗品。</p>
+    </div>
+    <div class="info-card">
+      <div class="card-icon">🚀</div>
+      <h4>飞船站</h4>
+      <p>购买与升级局内支援：攻击机支援呼叫、升级支援的击伤能力与支援次数——局内战斗的战术资源来源。</p>
+    </div>
+    <div class="info-card">
+      <div class="card-icon">🔧</div>
+      <h4>多功能站</h4>
+      <p>制作物品与改装装备的模块集合：制作台消耗物资货币合成高级物资，改装台在此使用配件改装装备。</p>
+    </div>
+    <div class="info-card">
+      <div class="card-icon">🏢</div>
+      <h4>公司部门</h4>
+      <p>派系任务与角色升级的模块集合：公司派系系统（接取不同派系任务提升派系等级）与员工等级系统（消耗员工解锁并升级技能）。</p>
+    </div>
+  </div>
+
+  <img src="/assets/img/project/main-scene-modules.png" alt="主场景模块设定图">
 </div>
 
 <div class="section" id="sec4">
   <div class="sec-num">04</div>
-  <h2 class="sec-title">商店与制作改装</h2>
+  <h2 class="sec-title">商店 / 制作 / 改装</h2>
 
-  <p>商店按分类页签组织商品，购买优先入背包、满则转仓库；
-  多功能终端集成制作台与改装台两页：制作消耗材料合成物资，改装为武器挂载配件并实时改写武器数值。</p>
-  <img src="/assets/img/project/craft-shop-modules.png" alt="多功能与商店模块设定">
+  <p>三个经营终端共用一套"页签 + 卡片网格"的 UI 框架，玩家学一个就会全部：</p>
+
+  <div class="card-grid">
+    <div class="info-card">
+      <div class="card-icon">🏪</div>
+      <h4>商店</h4>
+      <p>页签分类：枪械 / 护具 / 背包 / 弹药 / 医疗。商品卡片双列展示（贴图+名称+数量+购买按钮），
+      悬停 2 秒显示物品详情卡。购买后优先放背包，容量不足自动转仓库，仓库不足给出提示。</p>
+    </div>
+    <div class="info-card">
+      <div class="card-icon">⚗️</div>
+      <h4>制作台</h4>
+      <p>同样的卡片布局，按配方合成物资；制作前扫描背包与仓库库存并优先消耗背包内物品，
+      资源不足给出明确提示。产出优先放背包，容量不足转仓库。</p>
+    </div>
+    <div class="info-card">
+      <div class="card-icon">🔧</div>
+      <h4>改装台</h4>
+      <p>左侧枪械数据展示 + 主物品放置槽 + 四个配件槽（枪口/弹匣/瞄具/枪托）。
+      点击槽位扫描背包、装备槽、仓库中的可用配件供选择；应用改装后数值实时更新到展示区，
+      清空改装则配件整体返还。</p>
+    </div>
+  </div>
+
+  <img src="/assets/img/project/craft-shop-modules.png" alt="商店与多功能终端模块设定图">
+
+  <div class="callout design">
+    <div class="callout-title">💡 设计说明</div>
+    <p>三个终端刻意共用同一套交互范式（页签切换/卡片悬停详情/按钮行为一致），
+    降低玩家的学习成本——经营模块的复杂度应该花在"选择"上，而不是"怎么操作"上。</p>
+  </div>
 </div>
 
 <div class="section" id="sec5">
   <div class="sec-num">05</div>
-  <h2 class="sec-title">核心机制设计</h2>
+  <h2 class="sec-title">物品存储与视野机制</h2>
 
-  <p>物品系统（类型×品质×堆叠）、视野迷雾（未探索遮蔽+障碍物半透明化）的规则设定。</p>
-  <img src="/assets/img/project/mechanics-items-vision.png" alt="物品与视野机制设定">
+  <p><strong>物品与存储</strong>：物品分种类和等级（品质五色：白绿蓝紫金红），非武器类物品占用网格空间
+  （如初步步枪占 2×4 格），仓库和背包内可自由规划摆放，物品允许旋转。弹药目前仅允许堆叠（90 发一组）。
+  背包本身是一种容器——换背包或丢弃背包时，物品留在背包里，类似"移动式容器"。</p>
 
-  <p>移动系统：静止/行走/疾跑三档速度对应不同噪音半径，直接喂给敌人 AI 的听觉感知——
-  移动方式即风险决策。</p>
-  <img src="/assets/img/project/mechanics-movement.png" alt="移动机制设定">
+  <p><strong>视野机制</strong>：分两层——周身视野（角色周围 3m 小范围可视）+ 视线视野（面朝方向 60° 平面锥形）；
+  非可视范围以灰暗蒙版覆盖，只显示静态物品、不显示敌人等行为角色。
+  瞄准时视野平滑收窄至 30°——想要精确瞄准就要承担视野压力。受击时在角色周围短暂显示指向受击方向的红色小三角。</p>
+
+  <img src="/assets/img/project/mechanics-items-vision.png" alt="物品存储与视野机制设定图">
+
+  <div class="callout design">
+    <div class="callout-title">💡 设计说明</div>
+    <p>网格化存储 + 旋转摆放 + 容器嵌套，全部服务于搜打撤的核心乐趣："带什么、放弃什么"的取舍决策；
+    视野收窄机制则把"瞄得准"变成一个资源管理问题，而不是无代价的辅助。</p>
+  </div>
 </div>
 
 <div class="section" id="sec6">
   <div class="sec-num">06</div>
-  <h2 class="sec-title">物品与装备体系</h2>
+  <h2 class="sec-title">移动 / 负重 / 噪音</h2>
 
-  <p>枪械与防具的数值框架：武器分类型与弹药等级，防具按部位提供护甲值；
-  掉落表按容器类型配置，品质决定基础价值。</p>
-  <img src="/assets/img/project/items-weapons-armor.png" alt="枪械防具设定">
+  <p>移动机制：正常行走 / 缓步走（静步，不消耗体力，移速 70%）/ 疾跑与翻越（消耗体力）。
+  移速应用物理表现——移动有加速过程，停止到行走有完加速过程（参考现实物理）；
+  受击瞬间减速且命中后一小段时间内保持定速值且加速度归零。</p>
+
+  <table class="data-table">
+    <thead><tr><th>移速</th><th>噪音范围</th></tr></thead>
+    <tbody>
+      <tr><td>行走</td><td>6m</td></tr>
+      <tr><td>静步</td><td>3m</td></tr>
+      <tr><td>疾跑</td><td>15m</td></tr>
+      <tr><td>翻越</td><td>10m</td></tr>
+    </tbody>
+  </table>
+
+  <p>噪音范围直接喂给敌人 AI 的听觉感知——移动方式即暴露风险的决策。
+  瞄准与开火时移速受枪械类型影响（步枪/散弹 80% → 机枪/重武器 70%），
+  跑步中被击中则移速减至行走速度且 1 秒内无法获得加速度。</p>
+
+  <p><strong>负重系统</strong>：人物有基础负重上限（装备与背包内物资均有重量），
+  超限后强制放弃掳获——搜多了跑不动，这是搜打撤"取舍"的物理载体。
+  负重等级与减速惩罚叠加：</p>
+
+  <table class="data-table">
+    <thead><tr><th>负重等级（当前负重值）</th><th>减速惩罚（叠加）</th></tr></thead>
+    <tbody>
+      <tr><td>上限值 80%</td><td>体力消耗加快 50%</td></tr>
+      <tr><td>上限值 90%</td><td>体力消耗+50%、体力恢复速度降低 50%</td></tr>
+      <tr><td>上限值 100%</td><td>体力消耗+50%、恢复降低 50%、强制最慢移速、禁止大动作</td></tr>
+      <tr><td>上限值 150%</td><td>"难以前行"，禁止移动</td></tr>
+    </tbody>
+  </table>
+
+  <img src="/assets/img/project/mechanics-movement.png" alt="移动负重噪音机制设定图">
 </div>
 
 <div class="section" id="sec7">
   <div class="sec-num">07</div>
+  <h2 class="sec-title">枪械防具数值设计</h2>
+
+  <p>武器性能由四个维度描述，全部受人机功效影响：
+  <strong>后坐力</strong>（影响开火散步与准星回收）、<strong>操作性</strong>（影响开火移速、举镜收敞步距离）、
+  <strong>人机功效</strong>（影响转枪跟枪速度）、伤害与射速。
+  射击伤害由枪械属性中的伤害等级决定，弹药等级只决定穿透和加成。</p>
+
+  <table class="data-table">
+    <thead><tr><th>枪械分类</th><th>覆盖散布</th><th>瞄准散布</th><th>人机功效</th><th>生态定位</th></tr></thead>
+    <tbody>
+      <tr><td>步枪类</td><td>较差</td><td>近至中距离较好</td><td>中等</td><td>中近距离的基准武器</td></tr>
+      <tr><td>散弹枪类</td><td>弹孔散布中等</td><td>瞄准收束弹孔散步，飞行移动扩散增强</td><td>中等</td><td>近距离特化武器</td></tr>
+      <tr><td>手枪、冲锋枪类</td><td>中等</td><td>中至近距离较差</td><td>较好</td><td>近距离灵活武器</td></tr>
+      <tr><td>机枪、重武器类</td><td>较差</td><td>近至中距离较好</td><td>差</td><td>固定架点火力</td></tr>
+      <tr><td>狙击、精锐武器类</td><td>差</td><td>中至远距离高射极好</td><td>中等</td><td>中远距离精准火力</td></tr>
+    </tbody>
+  </table>
+
+  <p><strong>护具与弹药联动</strong>：护具 5 个等级、弹药 6 个等级，护甲值 100 点、受击时消耗。
+  关键规则：<strong>高等级弹药可无视低等级护具的部分减伤</strong>（如 T3 弹对护具等级 2 造成生命值 90% 伤害），
+  形成"穿深对抗护甲"的数值轴——玩家在配装弹药时就是在选择对付什么类型的敌人。</p>
+
+  <img src="/assets/img/project/items-weapons-armor.png" alt="枪械防具数值设定图">
+</div>
+
+<div class="section" id="sec8">
+  <div class="sec-num">08</div>
   <h2 class="sec-title">装备 UI 与工程化</h2>
 
-  <p>角色页装备 UI 的布局设定：装备槽 + 背包网格 + 保险箱三区，
-  支持拖拽穿戴、旋转摆放、双击快速转移。</p>
-  <img src="/assets/img/project/equip-ui.png" alt="角色装备UI设定">
+  <p>角色页分三区：<strong>左侧装备槽区</strong>（头盔/护具/远程武器1/近战/远程武器2/投掷物 + 保险箱）、
+  <strong>中部背包网格区</strong>、<strong>右侧地面容器网格区</strong>（与交互中容器联动）。
+  支持拖拽穿戴、旋转摆放、双击快速转移、点装备槽卸下。</p>
+
+  <img src="/assets/img/project/equip-ui.png" alt="角色装备UI设定图">
 
   <div class="callout analysis">
-    <div class="callout-title">📌 工程化现状</div>
-    <p>当前为灰盒可玩阶段：核心循环（搜打撤→经营→再出发）已完整跑通，
-    自动化测试保障迭代质量；后续计划为表现层升级与可玩包发布。</p>
+    <div class="callout-title">📌 工程化现状与后续计划</div>
+    <p>当前为灰盒可玩阶段：搜打撤核心循环（进图→搜刮→战斗→撤离→经营）已完整跑通，
+    119 项自动化断言保障迭代质量；物品/枪械/敌人/任务全部配置表驱动。
+    后续计划：表现层升级（替换占位素材）、可玩包发布、危险区内容扩充。</p>
   </div>
 </div>
 
