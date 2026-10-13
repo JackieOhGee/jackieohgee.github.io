@@ -259,8 +259,6 @@ excerpt: 个人开发的俯视角搜打撤游戏：核心循环完整可玩，QF
 
 <div class="section" id="sec8">
   <div class="sec-num">08</div>
-  <h2 class="sec-title">装备 UI 与工程化</h2>
-
   <div class="callout analysis">
     <div class="callout-title">📌 工程化现状与后续计划</div>
     <p>当前为灰盒可玩阶段：搜打撤核心循环（进图→搜刮→战斗→撤离→经营）已完整跑通，
