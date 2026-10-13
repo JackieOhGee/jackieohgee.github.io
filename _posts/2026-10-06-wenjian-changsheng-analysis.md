@@ -85,25 +85,39 @@ excerpt: 两个月实际游玩后的系统级拆解：核心闭环、养成线�
   <div class="sec-num">02</div>
   <h2 class="sec-title">市场表现</h2>
 
-  <div class="card-grid">
-    <div class="info-card">
-      <div class="stat-item"><div class="stat-val">96w</div><div class="stat-label">近一年 iOS 国区下载（七麦预估）</div></div>
+  <div class="stat-row">
+    <div class="stat-box">
+      <div class="stat-val">96w</div>
+      <div class="stat-label">近一年 iOS 国区下载</div>
+      <div class="stat-src">七麦预估</div>
     </div>
-
-  <img src="/assets/img/wjcs/image2.png" alt="下载量预估">
-
-    <div class="info-card">
-      <div class="stat-item"><div class="stat-val">$383w</div><div class="stat-label">近一年 iOS 国区收入（七麦预估）</div></div>
+    <div class="stat-box">
+      <div class="stat-val">$383w</div>
+      <div class="stat-label">近一年 iOS 国区收入</div>
+      <div class="stat-src">七麦预估</div>
     </div>
-
-  <img src="/assets/img/wjcs/image3.png" alt="收入预估">
-
-    <div class="info-card">
-      <div class="stat-item"><div class="stat-val">7.4</div><div class="stat-label">TapTap 评分（中等，好评差评参半）</div></div>
+    <div class="stat-box">
+      <div class="stat-val">7.4</div>
+      <div class="stat-label">TapTap 评分</div>
+      <div class="stat-src">好评差评参半</div>
     </div>
   </div>
 
-  <img src="/assets/img/wjcs/image5.png" alt="TapTap评价">
+  <div class="fig-row">
+    <figure class="fig">
+      <img src="/assets/img/wjcs/image2.png" alt="近一年下载量预估">
+      <figcaption>近一年 iOS 国区下载量估算 · 七麦数据</figcaption>
+    </figure>
+    <figure class="fig">
+      <img src="/assets/img/wjcs/image3.png" alt="近一年收入预估">
+      <figcaption>近一年 iOS 国区收入估算 · 七麦数据</figcaption>
+    </figure>
+  </div>
+
+  <figure class="fig fig-single">
+    <img src="/assets/img/wjcs/image5.png" alt="TapTap 评分详情">
+    <figcaption>TapTap 评分 7.4 · 共 8,335 条评价</figcaption>
+  </figure>
 
   <div class="card-grid">
     <div class="info-card">
