@@ -53,7 +53,7 @@ excerpt: 个人开发的俯视角搜打撤游戏：核心循环完整可玩，QF
   <div class="sec-num">01</div>
   <h2 class="sec-title">项目概览</h2>
 
-  <p>一款俯视角 3D 搜打撤游戏，参考《地狱潜兵 2》的战场支援循环。玩家从空间站港口出发进入危险区，
+  <p>一款俯视角 3D 搜打撤游戏，设计上参考《三角洲行动》、《逃离塔克夫》。玩家从空间站港口出发进入危险区，
   搜刮物资、对抗敌人、前往撤离点结算；带回的物资出售换取货币，投入装备养成与公司派系升级，再进入下一局。</p>
 
   <div class="card-grid">
@@ -61,16 +61,6 @@ excerpt: 个人开发的俯视角搜打撤游戏：核心循环完整可玩，QF
       <div class="card-icon">🏗️</div>
       <h4>架构</h4>
       <p>QFramework：UIKit 管全部界面、配置表驱动物品/敌人/任务数据、命令层处理玩家操作、Model 层持有存档——界面与逻辑分离，改数据不动代码。</p>
-    </div>
-    <div class="info-card">
-      <div class="card-icon">🎬</div>
-      <h4>场景管线</h4>
-      <p>关卡由编辑器脚本一键生成，生成后可在编辑器手调；摆位可导出为存档，重建场景后自动恢复，手调不丢失。</p>
-    </div>
-    <div class="info-card">
-      <div class="card-icon">🧪</div>
-      <h4>自动化测试</h4>
-      <p>119 项断言的命令行冒烟测试，每次改动全量回归——单人开发的质量底线。</p>
     </div>
     <div class="info-card">
       <div class="card-icon">🎨</div>
@@ -91,7 +81,7 @@ excerpt: 个人开发的俯视角搜打撤游戏：核心循环完整可玩，QF
   <h2 class="sec-title">实机演示</h2>
 
   <p>演示流程：港口仓库 → 商店与改装台 → 进入危险区搜刮 → 遭遇敌人（AI 士气表现）→
-  手雷投掷与闪避 AI → 撤离结算，旁白同步讲解各系统实现。</p>
+  手雷投掷与闪避 AI → 撤离结算。</p>
 
   <div class="video-card">
     <video controls preload="metadata">
@@ -180,7 +170,11 @@ excerpt: 个人开发的俯视角搜打撤游戏：核心循环完整可玩，QF
   <div class="sec-num">05</div>
   <h2 class="sec-title">物品存储与视野机制</h2>
 
-  <p><strong>物品与存储</strong>：物品分种类和等级（品质五色：白绿蓝紫金红），非武器类物品占用网格空间
+  <p>角色页分三区：<strong>左侧装备槽区</strong>（头盔/护具/远程武器1/远程武器2/近战/投掷物 + 保险箱）、
+  <strong>中部背包网格区</strong>、<strong>右侧地面容器网格区</strong>（与交互中容器联动）。
+  支持拖拽穿戴、旋转摆放、双击快速转移、点装备槽卸下。</p>
+
+  <p><strong>物品与存储</strong>：物品分种类和等级（品质六色：白绿蓝紫金红），物品占用网格空间
   （如初步步枪占 2×4 格），仓库和背包内可自由规划摆放，物品允许旋转。弹药目前仅允许堆叠（90 发一组）。
   背包本身是一种容器——换背包或丢弃背包时，物品留在背包里，类似"移动式容器"。</p>
 
@@ -220,7 +214,7 @@ excerpt: 个人开发的俯视角搜打撤游戏：核心循环完整可玩，QF
   跑步中被击中则移速减至行走速度且 1 秒内无法获得加速度。</p>
 
   <p><strong>负重系统</strong>：人物有基础负重上限（装备与背包内物资均有重量），
-  超限后强制放弃掳获——搜多了跑不动，这是搜打撤"取舍"的物理载体。
+  超限后限制移动——搜多了跑不动，这是搜打撤"取舍"的物理载体。
   负重等级与减速惩罚叠加：</p>
 
   <table class="data-table">
@@ -241,23 +235,23 @@ excerpt: 个人开发的俯视角搜打撤游戏：核心循环完整可玩，QF
   <h2 class="sec-title">枪械防具数值设计</h2>
 
   <p>武器性能由四个维度描述，全部受人机功效影响：
-  <strong>后坐力</strong>（影响开火散步与准星回收）、<strong>操作性</strong>（影响开火移速、举镜收敞步距离）、
-  <strong>人机功效</strong>（影响转枪跟枪速度）、伤害与射速。
+  <strong>后坐力</strong>（影响开火散步与准星回收）、<strong>操作性</strong>（影响开火移速、举镜收束速度）、
+  <strong>人机功效</strong>（影响枪口跟随鼠标速度）、伤害与射速。
   射击伤害由枪械属性中的伤害等级决定，弹药等级只决定穿透和加成。</p>
 
   <table class="data-table">
-    <thead><tr><th>枪械分类</th><th>覆盖散布</th><th>瞄准散布</th><th>人机功效</th><th>生态定位</th></tr></thead>
+    <thead><tr><th>枪械分类</th><th>腰射散布</th><th>瞄准散布</th><th>人机功效</th><th>生态定位</th></tr></thead>
     <tbody>
       <tr><td>步枪类</td><td>较差</td><td>近至中距离较好</td><td>中等</td><td>中近距离的基准武器</td></tr>
       <tr><td>散弹枪类</td><td>弹孔散布中等</td><td>瞄准收束弹孔散步，飞行移动扩散增强</td><td>中等</td><td>近距离特化武器</td></tr>
       <tr><td>手枪、冲锋枪类</td><td>中等</td><td>中至近距离较差</td><td>较好</td><td>近距离灵活武器</td></tr>
       <tr><td>机枪、重武器类</td><td>较差</td><td>近至中距离较好</td><td>差</td><td>固定架点火力</td></tr>
-      <tr><td>狙击、精锐武器类</td><td>差</td><td>中至远距离高射极好</td><td>中等</td><td>中远距离精准火力</td></tr>
+      <tr><td>狙击、精确武器类</td><td>差</td><td>中至远距离高射极好</td><td>中等</td><td>中远距离精准火力</td></tr>
     </tbody>
   </table>
 
-  <p><strong>护具与弹药联动</strong>：护具 5 个等级、弹药 6 个等级，护甲值 100 点、受击时消耗。
-  关键规则：<strong>高等级弹药可无视低等级护具的部分减伤</strong>（如 T3 弹对护具等级 2 造成生命值 90% 伤害），
+  <p><strong>护具与弹药联动</strong>：护具 5 个等级、弹药 6 个等级，护甲值受击时消耗。
+  关键规则：<strong>高等级弹药可无视低等级护具的阻挡，造成减伤后伤害</strong>（如 T3 弹对护具等级 2 造成对生命值的 90% 伤害），
   形成"穿深对抗护甲"的数值轴——玩家在配装弹药时就是在选择对付什么类型的敌人。</p>
 
   <img src="/assets/img/project/items-weapons-armor.png" alt="枪械防具数值设定图">
@@ -266,12 +260,6 @@ excerpt: 个人开发的俯视角搜打撤游戏：核心循环完整可玩，QF
 <div class="section" id="sec8">
   <div class="sec-num">08</div>
   <h2 class="sec-title">装备 UI 与工程化</h2>
-
-  <p>角色页分三区：<strong>左侧装备槽区</strong>（头盔/护具/远程武器1/近战/远程武器2/投掷物 + 保险箱）、
-  <strong>中部背包网格区</strong>、<strong>右侧地面容器网格区</strong>（与交互中容器联动）。
-  支持拖拽穿戴、旋转摆放、双击快速转移、点装备槽卸下。</p>
-
-  <img src="/assets/img/project/equip-ui.png" alt="角色装备UI设定图">
 
   <div class="callout analysis">
     <div class="callout-title">📌 工程化现状与后续计划</div>

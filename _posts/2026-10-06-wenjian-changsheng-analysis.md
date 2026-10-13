@@ -89,13 +89,21 @@ excerpt: 两个月实际游玩后的系统级拆解：核心闭环、养成线�
     <div class="info-card">
       <div class="stat-item"><div class="stat-val">96w</div><div class="stat-label">近一年 iOS 国区下载（七麦预估）</div></div>
     </div>
+
+  <img src="/assets/img/wjcs/image2.png" alt="下载量预估">
+
     <div class="info-card">
       <div class="stat-item"><div class="stat-val">$383w</div><div class="stat-label">近一年 iOS 国区收入（七麦预估）</div></div>
     </div>
+
+  <img src="/assets/img/wjcs/image3.png" alt="收入预估">
+
     <div class="info-card">
       <div class="stat-item"><div class="stat-val">7.4</div><div class="stat-label">TapTap 评分（中等，好评差评参半）</div></div>
     </div>
   </div>
+
+  <img src="/assets/img/wjcs/image5.png" alt="TapTap评价">
 
   <div class="card-grid">
     <div class="info-card">
@@ -119,6 +127,8 @@ excerpt: 两个月实际游玩后的系统级拆解：核心闭环、养成线�
     <div class="callout-title">💡 核心洞察</div>
     <p>游戏内系统众多，但各系统的循环驱动一致：<strong>玩家行为的出发点都是获取资源提升战力，进而提升活动竞争力，以获取更好的养成资源与社交体验</strong>——行为与目标彼此交替，构成核心动力循环。</p>
   </div>
+
+  <img src="/assets/img/wjcs/image6.png" alt="核心循环">
 
   <div class="card-grid">
     <div class="info-card">
@@ -145,6 +155,8 @@ excerpt: 两个月实际游玩后的系统级拆解：核心闭环、养成线�
 
   <h3>核心闭环示例：论剑台（同区 PVP）</h3>
   <p>论剑台完整呈现了闭环在具体玩法中的形态：每日任务引导进入论剑 PVP → 对战获取<strong>论剑币 + 论剑积分</strong> → 货币在商店兑换神通养成资源、积分提升段位 → 特定神通解锁/升级材料与论剑商店绑定 → 赛季结算重置积分、按段位发放奖励与限时称号 → 驱动持续参与。</p>
+
+  <img src="/assets/img/wjcs/image7.png" alt="论剑台流程">
 
   <div class="flow-list">
     <div class="flow-item">对战获取货币、提升段位</div>
@@ -186,7 +198,7 @@ excerpt: 两个月实际游玩后的系统级拆解：核心闭环、养成线�
     </tbody>
   </table>
 
-  <h3>深选系统：异宝与星墟古地</h3>
+  <h3>子系统：异宝与星墟古地</h3>
   <div class="card-grid">
     <div class="info-card">
       <div class="card-icon">🏺</div>
@@ -204,6 +216,10 @@ excerpt: 两个月实际游玩后的系统级拆解：核心闭环、养成线�
       <p>每周最多领取 10 次古地奖励：5 次免费 + 5 次仙玉购买——社交组队与付费门槛双重卡点。</p>
     </div>
   </div>
+
+  <img src="/assets/img/wjcs/image8.png" alt="战斗系统">
+
+  <img src="/assets/img/wjcs/image9.png" alt="战斗流程">
 
   <div class="callout design">
     <div class="callout-title">⚙️ 战斗机制：终结触发</div>
@@ -252,6 +268,8 @@ excerpt: 两个月实际游玩后的系统级拆解：核心闭环、养成线�
 <div class="section" id="sec6">
   <div class="sec-num">06</div>
   <h2 class="sec-title">系统全景导图</h2>
+
+  <img src="/assets/img/wjcs/image1.png" alt="系统框架">
 
   <p>人界篇全系统思维导图（源自 XMind，219 个节点；横向滚动查看，鼠标悬停节点看完整标题）：</p>
 
@@ -575,12 +593,12 @@ excerpt: 两个月实际游玩后的系统级拆解：核心闭环、养成线�
   <h2 class="sec-title">整体评价</h2>
 
   <div class="callout highlight">
-    <div class="callout-title">✅ 优势</div>
-    <p>放置挂机赛道以 2D 为主（一念逍遥/最强祖师/寻道大千），<strong>3D 画风与演出带来差异化新体验</strong>；相比同类高氪度基准，日常氪金需求属平民友好级；PVP/PVE/宗门战/跨区战/副本战玩法拓展充分，对重社交玩家吸引力强。</p>
+    <div class="callout-title">✅ 游戏优势</div>
+    <p>传统放置挂机赛道以 2D 为主（一念逍遥/最强祖师/寻道大千），<strong>问剑长生用3D 画风与演出带来差异化新体验</strong>；相比同类高氪度基准，日常氪金需求属平民友好级；PVP/PVE/宗门战/跨区战/副本战玩法拓展充分，对重社交玩家吸引力强。</p>
   </div>
 
   <div class="callout risk">
-    <div class="callout-title">⚠️ 劣势</div>
+    <div class="callout-title">⚠️ 游戏劣势</div>
     <p>运营活动氪金需求大、平民与氪金差距大、死区死服频繁；本质仍是氪金数值游戏，目标群体固化难以吸纳新血。系统层面：养成系统过多且打磨深度不足、部分系统强绑定氪金（如阴神系统单天赋树 + 单一氪金获取通道）——本质是<strong>过度创造养成缺口与氪金点</strong>，拉开玩家差距。</p>
   </div>
 
@@ -592,11 +610,6 @@ excerpt: 两个月实际游玩后的系统级拆解：核心闭环、养成线�
   <div class="callout analysis">
     <div class="callout-title">📌 总结</div>
     <p>表现符合中等评分定位：题材经典、玩法丰富、视觉体验好、社交乐趣足；但玩家阶级差距大、群体固化、运营活动过密。<strong>其系统设计与系统间关系值得研究借鉴，商业化开发上需要更多取舍思考。</strong></p>
-  </div>
-
-  <img src="/assets/img/wjcs/image2.png" alt="游戏系统界面">
-  <img src="/assets/img/wjcs/image4.png" alt="游戏系统界面">
-</div>
 
 </main>
 </div>

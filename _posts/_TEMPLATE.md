@@ -1,8 +1,8 @@
 ---
 layout: post
-title: 文章标题
-subtitle: 一句话副标题
-category: 系统拆解
+title: 个人作品集
+subtitle: 系统策划方向
+category: 系统拆解、个人项目
 date: 2026-01-01
 excerpt: 列表页显示的摘要，80 字以内。
 ---
