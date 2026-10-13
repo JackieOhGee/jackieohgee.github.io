@@ -1,6 +1,6 @@
 ---
 layout: teardown
-title: 《星际回收工》开发中项目
+title: 《星际回收工》
 subtitle: 俯视角搜打撤 · Unity 6 + QFramework · 单人开发
 category: 开发中项目
 tags: [Unity 6, QFramework, 搜打撤, 单人开发]
@@ -30,7 +30,7 @@ excerpt: 个人开发的俯视角搜打撤游戏：核心循环完整可玩，QF
     <li><a href="#sec5"><span class="toc-num">05</span>物品存储与视野机制</a></li>
     <li><a href="#sec6"><span class="toc-num">06</span>移动 / 负重 / 噪音</a></li>
     <li><a href="#sec7"><span class="toc-num">07</span>枪械防具数值设计</a></li>
-    <li><a href="#sec8"><span class="toc-num">08</span>装备 UI 与工程化</a></li>
+    <li><a href="#sec8"><span class="toc-num">08</span>后续设计方向</a></li>
   </ul>
   <a class="back-btn" href="/">← 返回作品集</a>
 </aside>
@@ -259,6 +259,8 @@ excerpt: 个人开发的俯视角搜打撤游戏：核心循环完整可玩，QF
 
 <div class="section" id="sec8">
   <div class="sec-num">08</div>
+  <h2 class="sec-title">后续设计方向</h2>
+
   <div class="callout analysis">
     <div class="callout-title">📌 工程化现状与后续计划</div>
     <p>当前为灰盒可玩阶段：搜打撤核心循环（进图→搜刮→战斗→撤离→经营）已完整跑通，
