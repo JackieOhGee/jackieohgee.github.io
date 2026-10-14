@@ -119,6 +119,16 @@ excerpt: 两个月实际游玩后的系统级拆解：核心闭环、养成线�
     <figcaption>TapTap 评分 7.4 · 共 8,335 条评价</figcaption>
   </figure>
 
+  <h3>搜索引擎指数</h3>
+  <p>数据来源于百度指数，为近一年「问剑长生」关键词的预估搜索量走势——可反映公域热度的自然波动。</p>
+
+  <figure class="fig">
+    <img src="/assets/img/wjcs/image4.png" alt="百度指数近一年走势">
+    <figcaption>百度指数 · 近一年搜索量走势（日均 557，同比 −30.39%）</figcaption>
+  </figure>
+
+  <h3>用户口碑</h3>
+
   <div class="card-grid">
     <div class="info-card">
       <div class="card-icon">👍</div>
@@ -196,7 +206,7 @@ excerpt: 两个月实际游玩后的系统级拆解：核心闭环、养成线�
   <div class="sec-num">04</div>
   <h2 class="sec-title">养成与战斗系统</h2>
 
-  <p>战斗涉及的加成系统极广，以拆解者账号（总战力 62.54 亿）为例，战力占比 Top 8：</p>
+  <p>战斗涉及的加成系统极广。以拆解者账号（总战力 62.54 亿）为例，19 个系统参与战力构成，其中 <strong>11 个模块贡献了 90% 的战力</strong>：</p>
 
   <table class="data-table">
     <thead><tr><th>#</th><th>系统</th><th>战力（亿）</th><th>占比</th><th>累计占比</th></tr></thead>
@@ -209,6 +219,195 @@ excerpt: 两个月实际游玩后的系统级拆解：核心闭环、养成线�
       <tr><td>6</td><td>灵兽</td><td>4.63</td><td>7.40%</td><td>61.57%</td></tr>
       <tr><td>7</td><td>飞行法器</td><td>4.47</td><td>7.15%</td><td>68.72%</td></tr>
       <tr><td>8</td><td>道业</td><td>3.99</td><td>6.38%</td><td>75.10%</td></tr>
+      <tr><td>9</td><td>真灵血脉</td><td>3.80</td><td>6.08%</td><td>81.18%</td></tr>
+      <tr><td>10</td><td>阴神养成</td><td>3.24</td><td>5.18%</td><td>86.36%</td></tr>
+      <tr><td>11</td><td>人物修为</td><td>2.28</td><td>3.64%</td><td>90.00%</td></tr>
+      <tr><td>12</td><td>罗盘加成</td><td>1.33</td><td>2.13%</td><td>92.13%</td></tr>
+      <tr><td>13</td><td>精魄</td><td>1.23</td><td>1.97%</td><td>94.10%</td></tr>
+      <tr><td>14</td><td>宗门加成</td><td>0.88</td><td>1.41%</td><td>95.51%</td></tr>
+      <tr><td>15</td><td>魔族秘术</td><td>0.80</td><td>1.28%</td><td>96.79%</td></tr>
+      <tr><td>16</td><td>终结秘宝</td><td>0.71</td><td>1.13%</td><td>97.92%</td></tr>
+      <tr><td>17</td><td>天晶养成</td><td>0.61</td><td>0.98%</td><td>98.90%</td></tr>
+      <tr><td>18</td><td>魂幡加成</td><td>0.50</td><td>0.80%</td><td>99.70%</td></tr>
+      <tr><td>19</td><td>至宝加成</td><td>0.08</td><td>0.13%</td><td>99.83%</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout analysis">
+    <div class="callout-title">📊 分析结论</div>
+    <p>11 个模块占总战力 90%，是养成的关键抓手。由于部分系统（如命火）在灵界篇章才解锁，下文只分析<strong>游戏初期即解锁且占关键占比</strong>的系统：四维与灵压、神通、心法与道业、法宝与装备、灵兽、异宝与古地。</p>
+  </div>
+
+  <h3>基础属性：四维与灵压</h3>
+  <p><strong>四维</strong>代表基础战斗属性，从修为等级、装备、心法与道业等级等系统获得提升；<strong>灵压</strong>由飞行法器升级获取，对战开始时双方比拼灵压点数，低的一方被压制并进入一段眩晕（受抗性影响），眩晕期间无法反击。</p>
+
+  <table class="data-table">
+    <thead><tr><th>名称</th><th>描述</th><th>获取 / 提升方式</th></tr></thead>
+    <tbody>
+      <tr><td>神威</td><td>代表攻击、命中</td><td>修为等级、装备加成、心法加成、道业加成</td></tr>
+      <tr><td>长生</td><td>代表生命值、暴击抗性</td><td>同上</td></tr>
+      <tr><td>金甲</td><td>代表防御、闪避</td><td>同上</td></tr>
+      <tr><td>融灵</td><td>代表法力、暴击率</td><td>同上</td></tr>
+      <tr><td>灵压</td><td>战斗开始阶段点数比大小，小点数一方短暂眩晕</td><td>飞行法器升级时提升</td></tr>
+    </tbody>
+  </table>
+
+  <p>灵压相关系统资源：</p>
+
+  <table class="data-table">
+    <thead><tr><th>资源</th><th>产出出口</th><th>消耗入口</th></tr></thead>
+    <tbody>
+      <tr><td>飞行法器碎片</td><td>论剑台、诸天商店、运营活动</td><td>飞行法器合成、升阶</td></tr>
+      <tr><td>锻器晶</td><td>日常与周常任务、仙坊购买、运营活动</td><td>飞行法器升级</td></tr>
+    </tbody>
+  </table>
+
+  <h3>神通：技能构筑的核心</h3>
+  <p>神通即技能，分派系、品阶与等级，有多种获取途径，重复获取转换为同名碎片；升级消耗较多碎片，并可在出招顺序中调整技能释放顺序。人界篇中神通有<strong>三大派系，每系两个流派</strong>：</p>
+
+  <table class="data-table">
+    <thead><tr><th>派系</th><th>流派</th></tr></thead>
+    <tbody>
+      <tr><td>剑系</td><td>伏龙、重光</td></tr>
+      <tr><td>火系</td><td>天炉、离火</td></tr>
+      <tr><td>雷系</td><td>神霄、五雷</td></tr>
+    </tbody>
+  </table>
+
+  <p>神通系统的相关设定：</p>
+
+  <table class="data-table">
+    <thead><tr><th>设定</th><th>描述</th></tr></thead>
+    <tbody>
+      <tr><td>神通</td><td>玩家技能构筑核心，最多装备 6 个；同派系装备 ≥4 个时激活对应派系法体（如 4 剑 + 1 火 + 1 雷 → 激活剑系法体）</td></tr>
+      <tr><td>克制关系</td><td>法体之间存在克制：剑克制雷、雷克制火、火克制剑——鼓励玩家探索多样的技能构筑方案</td></tr>
+      <tr><td>流派</td><td>装备同流派神通 ≥2 个时，激活对应的流派加成</td></tr>
+      <tr><td>获取方式</td><td>观星崖消耗资源抽取（每次抽取得 1 点道蕴，可用道蕴在商店兑换神通）；论剑台商店、诸天商店、宗门宝库用对应货币兑换；神通碎片在一定条件下可相互转换，填补养成空缺</td></tr>
+      <tr><td>升级与重置</td><td>神通内含多项属性等级，随神通等级逐步提升；升级消耗对应资源，且有重置功能，允许按养成需求回收资源并重新分配</td></tr>
+    </tbody>
+  </table>
+
+  <p>神通品阶与等级划分（升级消耗）：</p>
+
+  <table class="data-table">
+    <thead><tr><th>品阶</th><th>等级</th><th>升级消耗</th></tr></thead>
+    <tbody>
+      <tr><td rowspan="12">仙品（金）</td><td>仙品一星</td><td>0（本体解锁）</td></tr>
+      <tr><td>仙品二星</td><td>本体碎片 40</td></tr>
+      <tr><td>仙品三星</td><td>本体碎片 40 + 紫色碎片 30 + 蓝色碎片 100</td></tr>
+      <tr><td>仙品玄阶一星</td><td>本体碎片 40 + 紫色碎片 60 + 蓝色碎片 150</td></tr>
+      <tr><td>仙品玄阶二星</td><td>本体碎片 40 + 金色碎片 40 + 紫色碎片 60 + 蓝色碎片 150</td></tr>
+      <tr><td>仙品玄阶三星</td><td>本体碎片 40 + 金色碎片 40 + 紫色碎片 90 + 蓝色碎片 220</td></tr>
+      <tr><td>仙品地阶一星</td><td>本体碎片 40 + 金色碎片 40 + 紫色碎片 90 + 蓝色碎片 220</td></tr>
+      <tr><td>仙品地阶二星</td><td>本体碎片 40 + 金色碎片 40 + 紫色碎片 90 + 蓝色碎片 220</td></tr>
+      <tr><td>仙品地阶三星</td><td>本体碎片 80 + 金色碎片 80 + 紫色碎片 200 + 蓝色碎片 500</td></tr>
+      <tr><td>仙品天阶一星</td><td>本体碎片 80 + 金色碎片 80 + 紫色碎片 200 + 蓝色碎片 500</td></tr>
+      <tr><td>仙品天阶二星</td><td>本体碎片 120 + 金色碎片 120 + 紫色碎片 300 + 蓝色碎片 750</td></tr>
+      <tr><td>仙品天阶三星</td><td>本体碎片 120 + 金色碎片 120 + 紫色碎片 300 + 蓝色碎片 750</td></tr>
+      <tr><td rowspan="3">极品（紫）</td><td>极品一星</td><td>0（本体解锁）</td></tr>
+      <tr><td>极品二星</td><td>本体碎片 30</td></tr>
+      <tr><td>极品三星</td><td>本体碎片 30 + 蓝色碎片 60</td></tr>
+      <tr><td rowspan="3">上品（蓝）</td><td>上品一星</td><td>0（本体解锁）</td></tr>
+      <tr><td>上品二星</td><td>本体碎片 20</td></tr>
+      <tr><td>上品三星</td><td>本体碎片 60</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout analysis">
+    <div class="callout-title">📊 个人体验数据</div>
+    <p>约 2 个月游玩 + 微氪，目前养成 1 份天阶三星、1 份天阶一星、2 份地阶、2 份玄阶，实际持有资源够养满两个天阶三星——养成难度与投入时间在个人可接受范围内。</p>
+  </div>
+
+  <h3>心法与道业</h3>
+  <p>心法分神威类、长生类、金甲类、融灵类，各有加成偏重；道业是心法的附属子系统，作为心法拓展。心法有品阶、星级、等级，等级上限受品阶与星级影响。</p>
+
+  <table class="data-table">
+    <thead><tr><th>设定</th><th>描述</th></tr></thead>
+    <tbody>
+      <tr><td>心法</td><td>分四类：神威类、长生类、金甲类、融灵类，各自加成对应属性</td></tr>
+      <tr><td>获取方式</td><td>观星崖消耗资源抽取（每次得 1 点道蕴，可用道蕴兑换心法自选礼包）；宗门宝库用对应货币兑换限定心法</td></tr>
+      <tr><td>升级与重置</td><td>对四维的加成为「基础四维 + 侧重属性」，加成量与等级相关，等级上限受星级影响；有重置功能，可按需回收资源重新分配</td></tr>
+      <tr><td>图鉴与传承</td><td>解锁未拥有的心法时获得对应属性加成；收集特定心法并达到对应总星级时，获得传承加成</td></tr>
+      <tr><td>道业</td><td>收集到特定心法组时可消耗资源解锁；道业有阶级和等级，达成一定条件可提升等级；阶级受对应心法组总星级影响，同样依四维划分成四类</td></tr>
+      <tr><td>等级与星级升级资源</td><td>等级升级消耗心法感悟和心法精义，星级升级消耗心法真意和本体碎片；三类资源可在心法感悟中抽取、仙坊购买、悬赏俸禄每日领取</td></tr>
+      <tr><td>心法感悟</td><td>负责获取升级资源的模块，消耗灵泉果随机产出资源，可消耗高阶道具提升获取效率</td></tr>
+    </tbody>
+  </table>
+
+  <p>心法与道业系统相关资源：</p>
+
+  <table class="data-table">
+    <thead><tr><th>资源</th><th>产出出口</th><th>消耗入口</th></tr></thead>
+    <tbody>
+      <tr><td>心法感悟</td><td>心法悟道消耗灵泉果/开悟果获得、仙坊购买、运营活动</td><td>心法修行普通等级升级</td></tr>
+      <tr><td>心法精义</td><td>同上</td><td>心法修行节点等级突破</td></tr>
+      <tr><td>心法真意</td><td>同上</td><td>心法星级升级</td></tr>
+      <tr><td>灵泉果</td><td>日常与周常任务、仙坊购买、运营活动</td><td>心法悟道中作为基础消耗</td></tr>
+      <tr><td>开悟果</td><td>同上</td><td>拥有数量 &gt;0 且悟道处于特殊节点时自动消耗，用于提升获得资源数量</td></tr>
+      <tr><td>道业神蕴</td><td>同上</td><td>解锁与升级道业</td></tr>
+    </tbody>
+  </table>
+
+  <h3>法宝与装备</h3>
+  <div class="card-grid">
+    <div class="info-card">
+      <div class="card-icon">⚔️</div>
+      <h4>法宝种类与设定</h4>
+      <p>分攻击类（人界篇 4 种）与防御类（3 种）；两类各最多装备 3 件，不能同时装备同种法宝，法宝有等级与星级。</p>
+    </div>
+    <div class="info-card">
+      <div class="card-icon">🔁</div>
+      <h4>继承交互</h4>
+      <p>更换法宝时新法宝继承旧法宝等级；因不同境界法宝种类不同，星级只允许同种类法宝继承。</p>
+    </div>
+    <div class="info-card">
+      <div class="card-icon">🛡️</div>
+      <h4>战斗表现</h4>
+      <p>攻击法宝可与神通一起调整出招顺序；防御法宝调整承伤顺序并提供护盾值，护盾清空则法宝破碎，附属加成失效。</p>
+    </div>
+  </div>
+
+  <div class="callout design">
+    <div class="callout-title">⚙️ 设计点：境界驱动的重复消耗</div>
+    <p>装备分 4 种分别影响四维，有升级等级与品阶等级，更换时继承旧等级；每种装备都有天晶槽位，镶嵌天晶可获小额战力加成（氪金点）。<strong>不同境界有不同法宝种类，且高境界法宝战力碾压低境界</strong>——目的是为每个新境界阶段提供重复的养成资源消耗点，避免一套装备重复使用，同时贴合传统修仙「炼器」的玩法要素。</p>
+  </div>
+
+  <p>法宝与装备系统相关资源：</p>
+
+  <table class="data-table">
+    <thead><tr><th>资源</th><th>产出出口</th><th>消耗入口</th></tr></thead>
+    <tbody>
+      <tr><td>法宝打造材料（攻击/防御类）</td><td>日常与周常任务、宗门商店、仙坊、悬赏俸禄每日领取、挂机</td><td>器鼎打造法宝时消耗</td></tr>
+      <tr><td>法宝升级材料</td><td>仙坊购买、法宝分解</td><td>法宝升级</td></tr>
+      <tr><td>法宝（攻击/防御类）</td><td>器鼎打造产出、拍卖场购买（金色）</td><td>金色法宝升星消耗同类法宝；可在拍卖场出售</td></tr>
+      <tr><td>装备与对应碎片</td><td>宗门商店、仙坊、副本玩法、拍卖场、悬赏俸禄每日领取</td><td>器鼎分解、拍卖场出售</td></tr>
+      <tr><td>装备升级材料</td><td>器鼎分解装备获得</td><td>装备升级</td></tr>
+      <tr><td>天晶</td><td>副本玩法产出、拍卖场购买</td><td>天晶升级消耗同种天晶；可在拍卖场出售</td></tr>
+    </tbody>
+  </table>
+
+  <h3>灵兽</h3>
+  <div class="card-grid">
+    <div class="info-card">
+      <div class="card-icon">🐾</div>
+      <h4>作用与等级</h4>
+      <p>为玩家提供战力提升与技能辅助（使敌人眩晕、削弱抗性、提升爆发等）；灵兽共用境界等级，但各有独立的灵脉等级与技能等级。</p>
+    </div>
+    <div class="info-card">
+      <div class="card-icon">🎯</div>
+      <h4>战斗设定</h4>
+      <p>出战位 3 个、助战位 2 个；出战灵兽提供 10% 属性加成，助战 5%。战斗按出战位顺序依次释放灵兽技能，释放完即下场轮换。</p>
+    </div>
+  </div>
+
+  <p>灵兽系统相关资源：</p>
+
+  <table class="data-table">
+    <thead><tr><th>资源</th><th>产出出口</th><th>消耗入口</th></tr></thead>
+    <tbody>
+      <tr><td>探灵宝令（抽卡资源）</td><td>宗门商店、仙坊、悬赏等级升级领取、运营活动</td><td>灵兽抽取消耗</td></tr>
+      <tr><td>灵脉与灵兽技能相关资源</td><td>抽取灵兽时获得、灵兽商店兑换、仙坊购买</td><td>提升灵兽技能等级、提升灵脉、灵兽化形</td></tr>
+      <tr><td>育灵草（灵兽升级资源）</td><td>挂机获取、抽取灵兽时获得、灵兽商店兑换</td><td>灵兽等级升级</td></tr>
     </tbody>
   </table>
 
@@ -217,12 +416,12 @@ excerpt: 两个月实际游玩后的系统级拆解：核心闭环、养成线�
     <div class="info-card">
       <div class="card-icon">🏺</div>
       <h4>异宝设定</h4>
-      <p>异宝分等级与星级、重复获取转碎片、等级可重置；按加成侧重分平衡/威能/守护三类。</p>
+      <p>异宝分等级与星级、重复获取转碎片、等级可重置；按加成侧重分平衡／威能／守护三类。</p>
     </div>
     <div class="info-card">
       <div class="card-icon">🗺️</div>
       <h4>古地挑战</h4>
-      <p>不同古地产出对应系列异宝，古地传承等级与系列异宝总星级挂钩；最多 6 人组队，4 个刷怪阶段，随机产出红/金/紫/蓝/白宝箱。</p>
+      <p>不同古地产出对应系列异宝，古地传承等级与系列异宝总星级挂钩；最多 6 人组队，4 个刷怪阶段，随机产出红／金／紫／蓝／白宝箱。</p>
     </div>
     <div class="info-card">
       <div class="card-icon">🎫</div>
@@ -231,9 +430,29 @@ excerpt: 两个月实际游玩后的系统级拆解：核心闭环、养成线�
     </div>
   </div>
 
-  <img src="/assets/img/wjcs/image8.png" alt="战斗系统">
+  <p>异宝与古地相关资源：</p>
 
-  <img src="/assets/img/wjcs/image9.png" alt="战斗流程">
+  <table class="data-table">
+    <thead><tr><th>资源</th><th>产出出口</th><th>消耗入口</th></tr></thead>
+    <tbody>
+      <tr><td>异宝</td><td>古地挑战、运营活动、异宝宝库抽奖</td><td>异宝解锁与升级</td></tr>
+      <tr><td>异宝精华、异宝灵源</td><td>古地挑战、仙坊购买、异宝宝库抽奖</td><td>异宝升级</td></tr>
+      <tr><td>异宝密钥</td><td>古地礼包购买</td><td>异宝宝库抽奖</td></tr>
+    </tbody>
+  </table>
+
+  <h3>PVP 战斗阶段</h3>
+
+  <div class="fig-row">
+    <figure class="fig">
+      <img src="/assets/img/wjcs/image8.png" alt="战斗系统界面">
+      <figcaption>战斗系统加成结构</figcaption>
+    </figure>
+    <figure class="fig">
+      <img src="/assets/img/wjcs/image9.png" alt="战斗流程">
+      <figcaption>PVP 战斗阶段流程</figcaption>
+    </figure>
+  </div>
 
   <div class="callout design">
     <div class="callout-title">⚙️ 战斗机制：终结触发</div>
@@ -253,8 +472,10 @@ excerpt: 两个月实际游玩后的系统级拆解：核心闭环、养成线�
       <tr><td>宗门管理</td><td>入退/创建；宗主超 3 天未上线自动禅位给活跃副宗主或高贡献成员</td></tr>
       <tr><td>修葺</td><td>成员交互：提升建设度、捐物资、获取贡献——每日活跃的基础锚点</td></tr>
       <tr><td>宗门等级</td><td>等级越高容量/职位/挂机收益/建筑上限越高</td></tr>
+      <tr><td>职位</td><td>玩家在宗门中担任的职务，每周可领取对应档次的秘藏兑换卷——用职务绑定周常留存</td></tr>
       <tr><td>灵脉与灵矿</td><td>领地资源产出；无主矿脉可被抢占，战斗失败丢失席位——资源型 PVP 摩擦</td></tr>
       <tr><td>宗门任务</td><td>每日最多 5 个自动进行（红橙紫蓝四品阶，可刷新），产出凝神木</td></tr>
+      <tr><td>宗门秘藏</td><td>消耗秘藏兑换卷兑换物资——职位俸禄的直接兑换出口</td></tr>
       <tr><td>宗门丹炉</td><td>每周日 20 点开炉：每 4 根凝神木产出随机品质凝神露，全员投入越多高品质概率越高</td></tr>
       <tr><td>宗门奖池</td><td>按宗门活动排名注入礼盒，玩家可赞助——集体荣誉与共享福利</td></tr>
       <tr><td>宗门加成</td><td>组队中同宗 ≥4 人获得战斗加成——用数值奖励强化同宗组队</td></tr>
